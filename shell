@@ -1,0 +1,31 @@
+ADB
+
+To Connect Using ADB with Radax Android OS
+Command : ./adb connect 192.168.0.167:5555
+Result : already connected to 192.168.0.167:5555
+
+TO validate Connection
+Command : ./adb devices
+Result:
+List of devices attached
+192.168.0.167:5555	device
+
+Push file to Radax Android "Use /data/local/tmp/" because it give read and write access default
+Command: ./adb push /home/aditya/esl.apk /data/local/tmp/
+REsult : /home/aditya/esl.apk: 1 file pushed, 0 skipped. 3.7 MB/s (8802450 bytes in 2.293s)
+
+verify pushed file
+Command : ./adb shell ls -lh /data/local/tmp/esl.apk
+Result : -rw-rw-rw- 1 shell shell 8.3M 2026-01-06 05:49 /data/local/tmp/esl.apk
+
+install .apk file in my PC (In you System not Radxa Android)
+Commnad : ./adb install /home/aditya/esl.apk
+Result : Performing Streamed Install
+
+install in Radxa Android
+Command: ./adb shell pm install /data/local/tmp/esl.apk
+Result : Success
+
+check installation
+Command : ./adb shell pm list packages | grep -i esl
+Result : package:com.superussystems.eslgateway
