@@ -1,5 +1,12 @@
 ADB
 
+ADB installtion for
+wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
+unzip platform-tools-latest-linux.zip
+cd platform-tools
+./adb version
+
+
 To Connect Using ADB with Radax Android OS
 Command : ./adb connect 192.168.0.167:5555
 Result : already connected to 192.168.0.167:5555
